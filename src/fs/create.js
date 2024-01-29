@@ -6,9 +6,8 @@ const create = async () => {
   new Promise((resolve, reject) => {
     writeFile(target, "I am fresh and young", {
       flag: "wx",
-    })
-    .catch(() => {
-      throw new Error("FS operation failed")
+    }).catch(() => {
+      throw new Error("FS operation failed");
     });
   });
 };
