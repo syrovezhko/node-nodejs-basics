@@ -1,5 +1,20 @@
+import path from "path";
+import { Stream } from "stream";
+import { writeFile } from "fs/promises";
+
+import fs from "fs";
+
 const write = async () => {
-    // Write your code here 
+  const target = path.resolve("./src/streams/files/fileToWrite.txt");
+
+  const stream = fs.createWriteStream(target);
+  process.stdout.write(
+    "Input text => press ENTER =>  to exit Ctrl+C combination\n\n",
+  );
+
+  process.stdin.on("data", (data) => {
+    stream.write(data);
+  });
 };
 
 await write();
