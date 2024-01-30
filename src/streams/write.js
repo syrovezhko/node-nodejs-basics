@@ -1,7 +1,4 @@
 import path from "path";
-import { Stream } from "stream";
-import { writeFile } from "fs/promises";
-
 import fs from "fs";
 
 const write = async () => {
